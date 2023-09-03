@@ -15,6 +15,7 @@ class _SingUpPageState extends State<SingUpPage> {
   final _formkey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController passwordController2 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -55,8 +56,8 @@ class _SingUpPageState extends State<SingUpPage> {
                                 textInputAction: TextInputAction.next,
                                 controller: emailController,
                                 decoration: InputDecoration(
-                                    hintText: "Input your email",
-                                    labelText: "Input your email",
+                                    hintText: "Enter your email",
+                                    labelText: "Enter your email",
                                     prefixIcon: Icon(Icons.email),
                                     border: OutlineInputBorder(
                                         borderRadius:
@@ -85,8 +86,48 @@ class _SingUpPageState extends State<SingUpPage> {
                                 obscureText: isObscure,
                                 textInputAction: TextInputAction.next,
                                 decoration: InputDecoration(
-                                    hintText: "Input your Password",
-                                    labelText: "Input your password",
+                                    hintText: "Enter your password",
+                                    labelText: "Enter your password",
+                                    suffixIcon: IconButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            isObscure = !isObscure;
+                                          });
+                                        },
+                                        icon: Icon(Icons.visibility)),
+                                    prefixIcon: Icon(Icons.password_outlined),
+                                    border: OutlineInputBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5))),
+                              ))),
+                          Expanded(
+                              flex: 1,
+                              child: Container(
+                                  child: TextFormField(
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return "password coun't be empty";
+                                  }
+                                  if (value.length < 6) {
+                                    return "Password must be more than 6 digits";
+                                  }
+                                  if(value!=passwordController.text){
+                                    return "password dose not match";
+                                  }
+                                },
+                                onEditingComplete: () {
+                                  if (_formkey.currentState!.validate()) {
+                                    print("successful");
+                                  } else {
+                                    print("unsuccessful");
+                                  }
+                                },
+                                controller: passwordController2,
+                                obscureText: isObscure,
+                                textInputAction: TextInputAction.next,
+                                decoration: InputDecoration(
+                                    hintText: "Confirm password",
+                                    labelText: "Confirm password",
                                     suffixIcon: IconButton(
                                         onPressed: () {
                                           setState(() {
@@ -116,9 +157,12 @@ class _SingUpPageState extends State<SingUpPage> {
                                     } else {}
 
                                     var e = emailController.text;
-                                    var p = passwordController.text;
-                                    var obj =
-                                        FirebaseHelper().singup(e, p, context);
+
+                                    var p = passwordController.text==passwordController2.text? passwordController.text:null;
+
+                                    print(".....................................$p");
+                                    // var p2=passwordController2.text;
+                                    var obj = FirebaseHelper().singup(e, p,  context);
                                   },
                                   child: Container(
                                     height: 200,
@@ -131,34 +175,66 @@ class _SingUpPageState extends State<SingUpPage> {
                               child: Center(
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
-                                      horizontal: 80),
-                                  child: Row(
-                                    children: [
-                                      Expanded(
-                                          child: Container(
-                                        child:
-                                            Image.asset("images/facebook.png"),
-                                      )),
-                                      SizedBox(
-                                        width: 30,
-                                      ),
-                                      Expanded(
-                                          child: Container(
-                                        child:
-                                            Image.asset("images/google.webp"),
-                                      )),
-                                      SizedBox(
-                                        width: 30,
-                                      ),
-                                      Expanded(
-                                          child: GestureDetector(
-                                        onTap: () {},
-                                        child: Container(
-                                          child:
-                                              Image.asset("images/phone.png"),
+                                      horizontal: 70),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(vertical: 1),
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                            child: Container(
+                                    height: double.infinity,
+                                        width: double.infinity,
+                                        decoration:BoxDecoration( color: Colors.white, borderRadius: BorderRadius.circular(30),
+
                                         ),
-                                      )),
-                                    ],
+                                        child:Padding(
+                                          padding: const EdgeInsets.all(12.0),
+                                          child: Container(height: double.infinity,width: double.infinity,
+                                            child: Image.asset("images/facebook.png"),
+                                          ),
+                                        )
+                                    )
+
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Expanded(
+                                            child:Container(
+                                                height: double.infinity,
+                                                width: double.infinity,
+                                                decoration:BoxDecoration( color: Colors.white, borderRadius: BorderRadius.circular(30),
+
+                                                ),
+                                                child:Padding(
+                                                  padding: const EdgeInsets.all(12.0),
+                                                  child: Container(height: double.infinity,width: double.infinity,
+                                                    child: Image.asset("images/google.webp"),
+                                                  ),
+                                                )
+                                            )
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Expanded(
+                                            child: GestureDetector(
+                                          onTap: () {},
+                                          child: Container(
+                                            height: double.infinity,
+                                            width: double.infinity,
+                                            decoration:BoxDecoration( color: Colors.white, borderRadius: BorderRadius.circular(30),
+
+                                          ),
+                                              child:Padding(
+                                                padding: const EdgeInsets.all(12.0),
+                                                child: Container(height: double.infinity,width: double.infinity,
+                                                child: Image.asset("images/phone.png"),
+                                                ),
+                                              )
+                                        )),)
+                                      ],
+                                    ),
                                   ),
                                 ),
                               )),

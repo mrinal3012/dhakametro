@@ -15,9 +15,9 @@ class _BookTicketPageState extends State<BookTicketPage> {
 
   int a = 1;
   int b = 1;
-  var value;
+  var value=0;
   var count = 1;
-  var totalValue;
+  var totalValue=0;
 
   getdata() {
     setState(() {
@@ -153,12 +153,6 @@ class _BookTicketPageState extends State<BookTicketPage> {
           : value = 0;
       totalValue = value * count;
     });
-    print(
-        "bbbbbbbbbbbbbbbb...................................................$b");
-    print(
-        "aaaaaaaaaaaaaaaaaaaaaa...............................................$a");
-    print(
-        "valuevaluevaluevalue,...................................................$value");
   }
 
   List<Station> addStationList = [];
@@ -196,13 +190,15 @@ class _BookTicketPageState extends State<BookTicketPage> {
                                     Expanded(
                                       child: Container(
                                         decoration: BoxDecoration(
-                                            color: Color(0xff015281),
+                                            color: Colors.white,
                                             borderRadius:
                                                 BorderRadius.circular(8)),
 
 
                                         child: Center(
                                           child: DropdownButton(
+                                            borderRadius: BorderRadius.circular(12),
+                                            dropdownColor: Colors.white,
                                               value: a,
                                               items: [
                                                 DropdownMenuItem(
@@ -247,30 +243,6 @@ class _BookTicketPageState extends State<BookTicketPage> {
                                                 getdata();
                                               })),
                                         ),
-
-                                        // ListView.builder(
-                                        //   itemCount: stationNameList.length,
-                                        //   itemBuilder: (context, index) =>
-                                        //       Container(
-                                        //           child: TextButton(
-                                        //               onPressed: () {
-                                        //                 a = stationNameList[
-                                        //                         index]
-                                        //                     .id;
-                                        //                 getdata();
-                                        //                 setState(() {});
-                                        //                 print(
-                                        //                     ".......................................................$a");
-                                        //               },
-                                        //               child: Text(
-                                        //                 "${stationNameList[index].name}",
-                                        //                 style: mystyleroboto(
-                                        //                     18,
-                                        //                     Colors.black,
-                                        //                     FontWeight.w500),
-                                        //               ))),
-                                        // ),
-
                                       ),
                                     ),
                                     SizedBox(
@@ -279,11 +251,13 @@ class _BookTicketPageState extends State<BookTicketPage> {
                                     Expanded(
                                       child: Container(
                                         decoration: BoxDecoration(
-                                            color: Color(0xff015281),
+                                            color: Colors.white,
                                             borderRadius:
                                                 BorderRadius.circular(8)),
                                         child: Center(
                                           child: DropdownButton(
+                                              borderRadius: BorderRadius.circular(12),
+                                              dropdownColor: Colors.white,
                                               value: b,
                                               items: [
                                                 DropdownMenuItem(
@@ -318,7 +292,7 @@ class _BookTicketPageState extends State<BookTicketPage> {
                                                   value: 7,
                                                 ),
                                                 DropdownMenuItem(
-                                                  child: Text("Agargaon"),
+                                                  child: Text("Agargaon",),
                                                   value: 8,
                                                 ),
 
@@ -329,28 +303,7 @@ class _BookTicketPageState extends State<BookTicketPage> {
                                               })),
                                         ),
 
-                                        // ListView.builder(
-                                        //   itemCount: stationNameList.length,
-                                        //   itemBuilder: (context, index) =>
-                                        //       Container(
-                                        //           child: TextButton(
-                                        //               onPressed: () {
-                                        //                 b = stationNameList[
-                                        //                         index]
-                                        //                     .id;
-                                        //                 getdata();
-                                        //                 setState(() {});
-                                        //                 print(
-                                        //                     ".......................................................$b");
-                                        //               },
-                                        //               child: Text(
-                                        //                   "${stationNameList[index].name}",
-                                        //                   style: mystyleroboto(
-                                        //                       18,
-                                        //                       Colors.black,
-                                        //                       FontWeight
-                                        //                           .w500)))),
-                                        // ),
+
                                       ),
                                     )
                                   ],
@@ -401,13 +354,13 @@ class _BookTicketPageState extends State<BookTicketPage> {
                                           style: mystyleroboto(18, Colors.black,
                                               FontWeight.w500)),
                                       SizedBox(
-                                        width: 10,
+                                        width: 20,
                                       )
                                     ],
                                   ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
+                                  // SizedBox(
+                                  //   width: 10,
+                                  // ),
                                   Text("Total Amount Tk:-$totalValue",
                                       style: mystyleroboto(
                                           18, Colors.black, FontWeight.w500))
