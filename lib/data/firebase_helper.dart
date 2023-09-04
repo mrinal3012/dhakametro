@@ -2,6 +2,7 @@
 import 'package:fireauth/screen/login_page.dart';
 import 'package:fireauth/screen/registration_page.dart';
 import 'package:fireauth/ticketbook/book_page.dart';
+import 'package:fireauth/ticketbook/email_verifiction_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -10,7 +11,7 @@ class FirebaseHelper{
     try{
       final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
       if(credential.user!.uid.isNotEmpty){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegistrationPage(),));
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => EmailVerificationPage(),));
       }else{
         print("not valid");
       }

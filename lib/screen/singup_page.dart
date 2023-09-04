@@ -12,6 +12,7 @@ class SingUpPage extends StatefulWidget {
 
 class _SingUpPageState extends State<SingUpPage> {
   bool isObscure = true;
+  bool Obscure=true;
   final _formkey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -123,7 +124,7 @@ class _SingUpPageState extends State<SingUpPage> {
                                   }
                                 },
                                 controller: passwordController2,
-                                obscureText: isObscure,
+                                obscureText: Obscure,
                                 textInputAction: TextInputAction.next,
                                 decoration: InputDecoration(
                                     hintText: "Confirm password",
@@ -131,7 +132,7 @@ class _SingUpPageState extends State<SingUpPage> {
                                     suffixIcon: IconButton(
                                         onPressed: () {
                                           setState(() {
-                                            isObscure = !isObscure;
+                                            Obscure = !Obscure;
                                           });
                                         },
                                         icon: Icon(Icons.visibility)),
