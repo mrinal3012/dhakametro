@@ -1,19 +1,20 @@
 import 'package:fireauth/data/custom_widget_page.dart';
 import 'package:flutter/material.dart';
 
-class SecondCardDonePage extends StatefulWidget {
-  const SecondCardDonePage({Key? key}) : super(key: key);
+class SecondCardPage extends StatefulWidget {
+  const SecondCardPage({Key? key}) : super(key: key);
 
   @override
-  State<SecondCardDonePage> createState() => _SecondCardDonePageState();
+  State<SecondCardPage> createState() => _SecondCardPageState();
 }
 
-class _SecondCardDonePageState extends State<SecondCardDonePage> {
+class _SecondCardPageState extends State<SecondCardPage> {
 
   TextEditingController bankAccountController = TextEditingController();
   bool isObscure = true;
   int value = 0;
   late int textValue;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,15 +104,15 @@ class _SecondCardDonePageState extends State<SecondCardDonePage> {
                                         CrossAxisAlignment.start,
                                         children: [
                                           Expanded(
-                                              flex: 1,
-                                              child: Text("")
+                                            flex: 1,
+                                            child: Text("")
                                             // Text("${widget.cardList[index].firstStationName}", style: mystyleroboto(18, Colors.black, FontWeight.w500),),
                                           ),
                                           Expanded(
                                             flex: 1,
                                             child: Center(
                                                 child: Text(
-                                                  "",
+                                                  "To",
                                                   style: mystyleroboto(
                                                       18,
                                                       Colors.black,
@@ -119,8 +120,8 @@ class _SecondCardDonePageState extends State<SecondCardDonePage> {
                                                 )),
                                           ),
                                           Expanded(
-                                              flex: 1,
-                                              child: Text("")
+                                            flex: 1,
+                                            child: Text("")
                                             // Text("${widget.cardList[index].secondStationName}", style: mystyleroboto(18, Colors.black, FontWeight.w500),),
                                           ),
                                         ],

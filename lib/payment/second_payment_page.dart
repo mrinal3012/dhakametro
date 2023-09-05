@@ -1,5 +1,6 @@
 import 'package:fireauth/data/custom_widget_page.dart';
 import 'package:fireauth/data/model_page.dart';
+import 'package:fireauth/payment/second_card_done_page.dart';
 import 'package:flutter/material.dart';
 
 class SecondPaymentPage extends StatefulWidget {
@@ -24,6 +25,7 @@ class _SecondPaymentPageState extends State<SecondPaymentPage> {
               onTap: () {
                 // addCardList.add(widget.modelList[index]);
                 // Navigator.of(context).push(MaterialPageRoute(builder: (context) => CardDonePage(cardList: addCardList)));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => SecondCardDonePage(),));
 
               },
               child: Container(
