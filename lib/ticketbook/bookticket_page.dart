@@ -2,6 +2,7 @@ import 'package:fireauth/data/custom_widget_page.dart';
 import 'package:fireauth/data/model_page.dart';
 import 'package:fireauth/payment/card_done_page.dart';
 import 'package:fireauth/payment/payment_page.dart';
+import 'package:fireauth/payment/second_payment_page.dart';
 import 'package:flutter/material.dart';
 
 class BookTicketPage extends StatefulWidget {
@@ -374,6 +375,7 @@ class _BookTicketPageState extends State<BookTicketPage> {
                                   style: ElevatedButton.styleFrom(
                                       backgroundColor: Color(0xff015281)),
                                   onPressed: () {
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => SecondPaymentPage(), ));
                                     // Navigator.of(context).push(MaterialPageRoute(builder: (context) => PaymentPage(ticketmodel: )));
                                     // addStationList.add(stationNameList[index]);
 
