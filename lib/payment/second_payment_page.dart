@@ -23,10 +23,7 @@ class _SecondPaymentPageState extends State<SecondPaymentPage> {
             padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
             child: GestureDetector(
               onTap: () {
-                // addCardList.add(widget.modelList[index]);
-                // Navigator.of(context).push(MaterialPageRoute(builder: (context) => CardDonePage(cardList: addCardList)));
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => SecondCardDonePage(),));
-
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => SecondCardDonePage(),));
               },
               child: Container(
                 decoration: BoxDecoration(color: Colors.blueGrey.withOpacity(.1),borderRadius: BorderRadius.circular(12)),
