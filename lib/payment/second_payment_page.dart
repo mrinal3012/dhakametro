@@ -33,8 +33,6 @@ class _SecondPaymentPageState extends State<SecondPaymentPage> {
                   child: Row(
                     children: [
                       Text("${paymentList[index].name}",style:mystyleroboto(18,Colors.black,FontWeight.w500)),
-                      // Text("${widget.modelList[index].firstStationName}"),
-                      // Text("${widget.modelList[index].secondStationName}"),
                       Spacer(),
                       Container(height: 80,width: 80,
                         child: Image.asset("${paymentList[index].image}"),)

@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
         child: Container(
           height: double.infinity,
           width: double.infinity,
-          // child: SvgPicture.asset("images/home.svg"),
+
           child: Image.asset("images/home.png"),
         ),
       ),

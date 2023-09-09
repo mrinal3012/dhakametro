@@ -376,13 +376,7 @@ class _BookTicketPageState extends State<BookTicketPage> {
                                       backgroundColor: Color(0xff015281)),
                                   onPressed: () {
                                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => SecondPaymentPage(), ));
-                                    // Navigator.of(context).push(MaterialPageRoute(builder: (context) => PaymentPage(ticketmodel: )));
-                                    // addStationList.add(stationNameList[index]);
 
-                                    // Navigator.of(context)
-                                    //     .push(MaterialPageRoute(
-                                    //   builder: (context) => PaymentPage(modelList: )
-                                    // ));
                                   },
                                   child: Text("Payment",
                                       style: mystyleroboto(

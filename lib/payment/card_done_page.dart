@@ -6,7 +6,7 @@ import '../data/model_page.dart';
 
 
 class CardDonePage extends StatefulWidget {
-  // const CardDonePage({Key? key}) : super(key: key);
+
 
   List<StationModel> cardList;
   CardDonePage({required this.cardList});
