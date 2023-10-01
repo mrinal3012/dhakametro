@@ -53,7 +53,7 @@ class _BookPageState extends State<BookPage> {
                           isColor=1;
                         });
                       }, child: Text(
-                        "station Booking",
+                        "station",
                         style: TextStyle(
                             fontSize: 15,
                             color: isColor == 1? Colors.red : Colors.blueGrey,
